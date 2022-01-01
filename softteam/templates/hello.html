@@ -1,0 +1,18 @@
+{% extends 'basic.html' %}
+{% block body %}
+<form action="hello"><input id="datepicker" onchange="checkDate()" required class="datepicker-input" type="date"
+                            data-date-format="yyyy-mm-dd" >
+    <p id="writing"></p>
+<input type="submit"> </form>
+<script>
+function checkDate() {
+   var selectedText = document.getElementById('datepicker').value;
+   var selectedDate = new Date(selectedText);
+   var now = new Date();
+   if (selectedDate > now) {
+    alert("Date must be in the future");
+<!--    document.getElementById('writing').innerHTML = 'hello';-->
+   }
+ }
+</script>
+{% endblock %}

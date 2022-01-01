@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block body %}
+# this page is for assigning work to the worker
+<form method="post" action="work_assign">{% csrf_token %}
+    <table>
+        <tr>
+            <td>application number</td>
+            <td><input type="number" name="app" ></td>
+        </tr>
+        <tr>
+            <td>job card number</td>
+            <td>
+                <input type="text" name="job no">
+            </td>
+        </tr>
+        <tr>
+            <td> grampanchayat </td>
+            <td><input type="text" name="panchayat"></td>
+        </tr>
+        <tr>
+            <td>work assign</td>
+            <td><input type="text" name="work_given"></td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td><input type="date" name="date"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="asign"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

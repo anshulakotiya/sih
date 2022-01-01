@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>attendence</title>
+</head>
+<body>
+todays date = {{ today.date }}
+{% for datas in data %}
+{% if today.date == datas.date %}
+{{ datas.date }}<br>
+{{ datas.worker }}<br>
+{{ datas.time }}<br>
+{{ datas.mark_attendence }}
+{% endif %}
+{% endfor %}
+</body>
+</html>

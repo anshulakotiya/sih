@@ -1,0 +1,9 @@
+{% extends 'basic.html' %}
+{% block title%} ATTENDENCE{% endblock %}
+{% block body %}
+<form action="date" method="post"> {% csrf_token %}
+   from <input type="date" name="fromdate">
+   to  <input type="date" name="todate" >
+    <input type="submit" value="Go">
+</form>
+{% endblock %}

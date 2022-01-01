@@ -1,0 +1,30 @@
+{% extends 'basic.html' %}
+{% block title %} table {% endblock %}
+{% block body %}
+<center><font size="8" color="red">
+    DETAILS OF WORKER
+</font></center>
+<br><br>
+<table align="center" border="1" cellspacing="0" style="font-size:30px;">
+    <tr>
+        <td align="center">Application number</td>
+        <td align="center">Name</td>
+        <td align="center">Head of household</td>
+        <td align="center">Gender</td>
+        <td align="center">Age</td>
+        <td align="center">Mobile number</td>
+    </tr>
+    {% for i in data %}
+    {% if i.card_status == 'Issued' %}
+    <tr>
+        <td align="center">{{i.ap_no_worker}}</td>
+        <td align="center">{{i.name_worker|title}}</td>
+        <td align="center">{{i.headname_worker|title}}</td>
+        <td align="center">{{i.gender_worker|title}}</td>
+        <td align="center">{{i.age_worker}}</td>
+        <td align="center">{{i.mobile_worker}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}

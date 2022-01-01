@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+{% extends 'basic.html' %}
+{% block title %}face caputre {% endblock%}
+{% block body %}
+<table width="100%" height="60">
+    <tr>
+       <td width="100%" bgcolor="#228b22">
+	   <ul style="margin-left:75%;" type="none" >
+	    <input type="button" value="change password" style="width:150px;height:40px;">
+	    <input type="submit" value="logout" style="width:80px;height:40px;">
+		</ul>
+       </tr>
+</table>
+<table width="80%">
+		<tr>
+	   <td>
+				<table cellspacing="20" style="font-size:25px; margin-bottom:50px;" >
+					<tr>
+						<td  width="20%"  ><br><br>JUMP TO:</td>
+					</tr>
+					<tr>
+						<td  width="20%" ><a href="bankdetail" style="text-decoration:none" >Bank details</a></td>
+					</tr>
+					<tr>
+						<td  width="20%" ><a href="" style="text-decoration:none">Add on field</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="" style="text-decoration:none">Application status</a></td>
+					</tr>
+					<tr>	
+						<td  width="20%" ><a href="not_verify" style="text-decoration:none">Verification</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="" style="text-decoration:none">Office</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="applied" style="text-decoration:none">Apply for job card</a></td>
+					</tr><tr>
+						<td width="20%" ><a href="muster" style="text-decoration:none">Musteroll</a></td>
+					</tr>
+				</table>
+		</td>
+		<td>
+<center>
+<br><br>
+<form action="first_verify" method="post">{% csrf_token %}
+<font size=10 >Photo Capturing</font><br><br>
+	<ul type="none">
+		<li>
+		<hr width="600">
+		<br><br>
+		<font size=5>Application Number</font>&#160&#160
+		<input type="text" placeholder="application number" name="appli_no" style="height:25px;"><br>
+		</li>
+		<li>
+		<br><br>
+		<input type="submit" value="Submit" style="height:30px;">
+		</li>
+		<br>
+		<hr width="600">
+	</ul>
+		<br><br><br>
+	</form>
+</center>
+</td>
+</table>
+{% endblock %}

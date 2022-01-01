@@ -1,0 +1,43 @@
+{% extends 'basic.html' %}
+{% block title %} Bank detail{% endblock%}
+{% block body %}
+
+<br><br>
+
+<font size="6" color="red">
+<center> BANK DETAIL</center><font></font>
+    <br>
+<table align="center" border="1" width="600" style="font-size:25px;" cellspacing="0">
+   <tr>
+       <td>NAME :</td>
+       <td>{{ data.name_worker|title}}</td>
+   </tr>
+    <tr>
+        <td>HEAD NAME :</td>
+        <td>{{ data.headname_worker|title}} </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>BANK NAME :</td>
+        <td>{{data.bank_worker|title}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+{% endblock%}

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+{% extends 'basic.html' %}
+{% block title %} Bank details {% endblock %}
+{% block body %}
+<div style="border:1px;background-color:#228b22;height:60px; top:20px;" align="right" >
+    <input type="button" value="change password" style="height:40px;margin-right:20px;margin-top:10px;">
+    <input type="button" value="log out" style="height:40px; margin-right:20px;margin-top:10px;">
+</div>
+<table width="90%">
+		<tr>
+	   <td>
+				<table cellspacing="20" style="font-size:25px;" >
+					<tr>
+						<td  width="20%"  ><br><br>JUMP TO:</td>
+					</tr>
+					<tr>
+						<td  width="20%" ><a href="applied" style="text-decoration:none" >Applied for job card</a></td>
+					</tr>
+					<tr>
+						<td  width="20%" ><a href="" style="text-decoration:none">Add on field</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="status" style="text-decoration:none">Application status</a></td>
+					</tr>
+					<tr>	
+						<td  width="20%" ><a href="not_verify" style="text-decoration:none">Verification</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="" style="text-decoration:none">Office</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="photo" style="text-decoration:none" >Photo capturing</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="muster" style="text-decoration:none" >Musteroll</a></td>
+					</tr>
+				</table>
+		</td>
+		<td>
+				<h1 align="center"><font  size=8 color="blue">BANK DETAIL OF WORKERS</font></h1>
+
+				<center>
+				<table  align="center" width="80%">
+					<tr>
+						<td align="center">
+						<font size=5>Search table by job card number</font>
+						</td>
+						<td  align="center">
+						<font size=5>Search table by application number</font>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+						<input type="text" placeholder="enter your job card number" name="nojob" style="height:25px;">
+						<input type="submit" value="go" style="height:30px;width:50px;">
+						</td>
+						<td align="center">
+						    <form action="bankby_app" method="post">{% csrf_token %}
+								<input type="text" placeholder="enter your appliction number" name="application" style="height:25px;">
+								<input type="submit" value="go" style="height:30px;width:50px;">
+							</form>
+						</td>
+					</tr>
+				</table>
+					<br><br>
+				<font size="5">
+			<table border="1" align="center" width="80% ">
+				<tr>
+					<td align="center">
+						Job card number
+					</td>
+					<td align="center">
+						Name
+					</td>
+					<td align="center">
+						Account number
+					</td>
+					<td align="center">
+						IFSC code
+					</td>
+					<td align="center">
+						Bank Name
+					</td>
+				</tr>
+
+				{% for i in data %}
+				{% if i.card_status == 'Issued' %}
+				<tr>
+					<td align="center">
+						{{i.card_no}}
+					</td>
+					<td align="center">
+						{{i.name_worker|title }}
+					</td>
+					<td align="center">
+						{{i.account_worker}}
+					</td>
+					<td align="center">
+						{% filter upper %}{{i.ifsc_worker}} {% endfilter%}
+					</td>
+					<td align="center">
+						{{i.bank_worker|title}}
+					</td>
+				</tr>
+					{% endif %}
+					{% endfor %}
+
+			</table >
+		</font>
+				</center>
+	</td>
+		</tr></table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block title %}ATTENDENCE{% endblock%}
+{% block body %}
+<center>
+<form action="att_search" method="post" style="font-size:30px;">{% csrf_token %}
+     PLESE CHEAK YOUR ATTENDENCE BY APPLICATION NUMBER HERE
+    <br>
+    <input type="number" placeholder="enter your application number" name="appli" align="middle" style="width:200; height:40px;">
+    <input type="submit" value="search" style="width:100px; height:40px; font-size:20px;" >
+</form></center>
+<hr>
+<br>
+
+ <table border="1" cellspacing="0" align="center" style="font-size:30px;" width="800">
+             <tr>
+                 <td align="center">NAME</td>
+                 <td align="center">DATE</td>
+                 <td align="center">ATTENDENCE</td>
+                 <td align="center">TIME</td>
+             </tr>
+     {% for i in data %}
+          {% if app|stringformat:"s" == i.worker.ap_no_worker|stringformat:"s" %}
+             <tr>
+                 <td align="center">{{i.worker.name_worker}}</td>
+                 <td align="center">{{i.date}}</td>
+                 <td align="center">{{i.mark_attendence}}</td>
+                 <td align="center">{{i.time}}</td>
+             </tr>
+          {% endif %}
+     {% endfor %}
+ </table>
+
+{% endblock %}

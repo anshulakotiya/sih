@@ -1,0 +1,59 @@
+<!DOCTYPE >
+{% extends 'basic.html' %}
+{% block title %} login {% endblock %}
+{% block body %}
+{% load static %}
+
+<table width="100%" height="60">
+    <tr>
+       <td width="100%" bgcolor="green">
+           <ul style="margin-left:80%;" type="none" >
+             <li>
+                     <a href="index"><button style="width:150px; height:60px;">HOME</button> </a>
+            </li>
+        </ul>
+       </td>
+    </tr>
+</table>
+    <font color="green">
+{% if messages %}
+<ul class="messages" type="circle" style="font-size:20px;">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+        {% endif %}<br></font>
+<p align="center">
+<font size="10" style="aligh:center;"><b>WELCOME</b></font>
+    <br><br> <font size="5">For Onfield supervisior</font>
+</p>
+ <form action="user_idfirst" method="post">{% csrf_token %}
+     <br>
+     <table align="center" border="0" cellspacing="2" width="400" height="300">
+         <tr>
+             <td colspan="2" align="center">
+               <font size="7" >Login</font>
+             </td>
+         </tr>
+
+         <tr>
+             <td> <font size="5">User Id</font></td>
+             <td style="margin-right:10px;">
+                 <img src="{% static 'images/images.png' %}" width="40px" height="40px" align="middle">
+                 <input type="text" name="userid1" style="width:200px; height:40px;"></td>
+         </tr>
+         <tr>
+            <td> <font size="5" >Password
+            </font></td>
+             <td>
+                   <img src="{% static 'images/password.jfif' %}" width="30px" height="30px" align="middle" style="margin-left:10px;">
+                 <input type="password" name="password1" style="width:200px; height:40px;" align="middle" maxlength="16">
+             </td>
+         </tr>
+         <tr><td colspan="2">
+             <center> <button style="width:160px; height:40px;"> <font size="5" >login</font></button> </center></td>
+           </tr>
+     </table>
+     <hr>
+ </form>
+{% endblock %}

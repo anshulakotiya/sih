@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+{% extends 'basic.html' %}
+{% block title %} verification {% endblock %}
+{% block body %}
+<hr color="black">
+<marquee>*&#160 OTHER &#160  LINKS &#160 *</marquee>
+<table align="center" width="80% " >
+		<tr>
+			<td align="center"><a href="">Applied for job card</a></td>
+			<td  align="center"><a href="">Add on field</a></td>
+			<td  align="center"><a href="">Application status</a></td>
+		</tr>
+</table>
+<table align="center" width="50%" >
+		<tr>
+			<td  align="center" ><a href="">Verification</a></td>
+			<td align="center" ><a href="">Office</a></td>
+		</tr>
+</table>
+<hr color="black">
+<table width="100%" height="60">
+    <tr>
+       <td width="100%" bgcolor="#228b22">
+	   <ul style="margin-left:85%;" type="none" >
+	    <input type="submit" value="logout">
+		</ul>
+       </tr>
+</table>
+<center><br><br>
+<font size=8 >Please verify the below details</font>
+<br><br>
+<hr width="600">
+<br>
+<ul type="none">
+	<li>
+       <font size="6"> Application number :{{data.ap_no_worker}}</font><br><br>
+	</li>
+	<li>
+		<font size="6">Name :   {{data.name_worker|title}}</font><br><br>
+	</li>
+	<li>	
+	    <font size="6">Card number : {{data.card_no}}</font><br><br>
+	</li>
+	<li>
+	<form action="capture" method="post" >{% csrf_token %}
+		<input type="checkbox" name="true" style="width:20px;height:20px;" required>
+		<font size="6" > All the above details are correct </font><br><br>
+		<input type="submit" value="submit" style="width:100px;height:40px; font-size:25px;" ></form>
+	</li>
+	<li><br><br>
+<br>
+<br>
+<hr width="600">
+</ul></center>
+{% endblock %}

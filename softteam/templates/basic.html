@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> {% block title %} {% endblock %}</title>
+</head>
+<body>
+<style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
+<center>
+    {% load static %}
+    <img src="{% static 'images/download.jfif' %}" height="150" width="15%" style="margin-right:60px">
+   <img src=" {% static 'images/goi.png' %}" width="50%" height="150">
+    <img src="{% static 'images/100days.jpg' %}" height="150" width="15%" style="margin-left:60px">
+ </center>
+<hr>
+{% block body %} {% endblock %}
+
+</body>
+</html>

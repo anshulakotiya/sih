@@ -1,0 +1,74 @@
+{% extends 'basic.html' %}
+{% block title %} status {% endblock %}
+{% block body %}
+<hr color="black">
+<table width="100%" height="60">
+    <tr>
+       <td width="100%" bgcolor="#228b22">
+	   <ul style="margin-left:75%;" type="none" >
+	    <input type="button" value="change password" style="width:150px;height:40px;">
+	    <input type="submit" value="logout" style="width:80px;height:40px;">
+		</ul>
+</table>
+<hr color="black">
+<center>
+<font color="red">
+{% if messages %}
+<ul class="messages" type="none" style="font-size:30px;">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}<br>
+</font></center>
+<table width="85%">
+    <tr>
+	   <td>
+				<table cellspacing="20" style="font-size:25px;" >
+					<tr>
+						<td>
+							JUMP TO:
+						</td>
+					</tr>
+					<tr>
+						<td  width="20%"  ><a href="bankdetail" style="text-decoration:none">Bank details</a></td>
+					</tr>
+					<tr>
+						<td  width="20%" ><a href="" style="text-decoration:none">Add on field</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="applied" style="text-decoration:none">Applied job card</a></td>
+					</tr>
+					<tr>
+						<td  width="20%"  ><a href="not_verify" style="text-decoration:none">Verification</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="" style="text-decoration:none" >Office</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="photo" style="text-decoration:none" >Photo capturing</a></td>
+					</tr>
+					<tr>
+						<td width="20%" ><a href="muster" style="text-decoration:none" >Musteroll</a></td>
+					</tr>
+				</table>
+           </td>
+            <td>
+            <center><fieldset style="width:1000px">
+            <legend><font size="8" color="blue">APPLICATION STATUS</font></legend>
+                <br>
+            <font color="red">PLESE CHEAK YOUR APPLICATION STATUS HERE</font>
+            <br><br>
+            <br><br>
+            <font size="5" >
+                <form action="result" method="post" style="text-size:10px;" >{% csrf_token %}
+                Application Number &nbsp;&nbsp;&nbsp;<input type="tel" placeholder="enter your application number" name="application" align="middle" style="width:200; height:30px;">
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="search" style="width:100px; height:30px; font-size:20px;" >
+            </form>
+            </font></fieldset></center>
+        </td>
+</tr></table>
+{% endblock %}

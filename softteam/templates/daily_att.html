@@ -1,0 +1,34 @@
+{% extends 'basic.html' %}
+{% block title %}attendence{% endblock %}
+
+{% block body %}<center>
+<font color="red" size="24">
+    <b> Daily Attendence</b>
+</font>
+</center><center>
+    <font size="5">Todays date : {{ today.date }}<br></font></center>
+<br>
+
+<table border="1" align="center" width="60%" cellspacing="0">
+    <tr>
+        <td>APPLICATION NUMBER</td>
+        <td>NAME</td>
+        <td>ATTENDENCE</td>
+        <td>TIME</td>
+    </tr>
+{% for datas in data %}
+
+
+{% if today.date == datas.date %}
+    <tr>
+        <td>{{ datas.worker_ap_no }}</td>
+        <td>{{ datas.worker_names|title}}</td>
+        <td>{{ datas.mark_attendence|title }}</td>
+        <td>{{ datas.time }}</td>
+    </tr>
+{% endif %}
+{% endfor %}
+</table>
+{{ datas.worker.name_worker}}
+    {{ datas.worker.job_no }}
+{% endblock %}

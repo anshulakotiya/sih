@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+{% extends 'basic.html' %}
+{% block title %} Result{% endblock %}
+{% block body %}
+<center style="font-size:40px;">
+Name : {{data.name_worker}}<br>
+Application Number : {{data.ap_no_worker}}<br>
+Application Status <br>
+<hr></center>
+<table align="center" style="font-size:30px;" width="30%" >
+    <tr>
+        <td>Name verification :</td>
+        <td> {{data.verify_name}}</td>
+    </tr>
+    <tr>
+        <td>Addhar Number :</td>
+        <td>{{data.verify_addhar}}</td>
+    </tr><tr>
+        <td>Gender:</td>
+        <td>{{data.verify_gender}}</td>
+    </tr><tr>
+        <td>Image:</td>
+        <td>{{data.verify_image}}</td>
+    </tr><tr>
+        <td>Address :</td>
+        <td>{{data.verify_address}}</td>
+    </tr><tr>
+        <td>Account Number :</td>
+        <td>{{data.verify_account}}</td>
+    </tr><tr>
+        <td>Bank Name :</td>
+        <td>{{data.verify_bank}}</td>
+    </tr><tr>
+        <td>Bank IFSC Code :</td>
+        <td>{{data.verify_ifsc}}</td>
+    </tr><tr>
+        <td>Card status :</td>
+        <td>{{data.card_status}}</td>
+    </tr><tr>
+        <td> Card Number :</td>
+        <td>{{data.card_no}}</td>
+    </tr>
+</table>
+{% endblock %}

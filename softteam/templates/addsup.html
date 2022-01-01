@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+{% extends 'basic.html' %}
+{% block title %} add supervisior{% endblock %}
+{% block body %}
+<form action="add_sup" method="post">{% csrf_token %}
+      add supervisior<br>
+name
+<input type="text" name="name_supervisor" align="middle"><br>
+mobile number
+<input type="integer" name="mobile_no" maxlength="10"><br>
+address
+<input type="text" name="address" requried><br>
+addhar numbers
+<input type="integer" name="addhar" requried>
+<br>
+<input type="date" name="dob" requried>
+      <input type="submit" value="submit form" requried>
+</form>
+{% endblock %}
